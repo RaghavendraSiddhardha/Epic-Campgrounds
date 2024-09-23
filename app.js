@@ -1,6 +1,4 @@
-if(process.env.NODE_ENV !== "production"){
-    require('dotenv').config()
-}
+
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -19,9 +17,8 @@ const LocalStrategy = require('passport-local')
 const mongoSanitize = require('express-mongo-sanitize')
 const helmet = require('helmet')
 const MongoStore = require('connect-mongo');
-const dbUrl = 'mongodb://localhost:27017/yelp_camp'
 
-mongoose.connect(dbUrl,{
+mongoose.connect(process.env.DB_URL,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -89,7 +86,7 @@ app.use(
 );
 
 const store = MongoStore.create({
-    mongoUrl: dbUrl,
+    mongoUrl: process.env.DB_URL,
     touchAfter: 24 * 60 * 60,
     crypto: {
         secret: 'thisshouldbeabettersecret!'
@@ -147,7 +144,3 @@ app.use((err,req,res,next)=>{
     if(!err.message) err.message='something went wrong'
     res.status(statusCode).render('error',{err})
 })
-
-
-//username: siddhardhabaratam2004
-//password: jfNEEEWr5fOM6ZaO
