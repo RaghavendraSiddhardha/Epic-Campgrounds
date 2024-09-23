@@ -7,19 +7,19 @@ Epic Campgrounds is a web-based application that allows users to explore, review
 
 ## Features
 
-- **Campground Listings**: View details and images of various campgrounds.
-- **User Authentication**: Sign up and login to access additional features.
-- **Review & Rating System**: Leave reviews and rate campgrounds based on your experiences.
-- **Search Functionality**: Filter and search campgrounds by location, amenities, or user ratings.
-- **Responsive Design**: Fully functional across devices (mobile, tablet, and desktop).
+- Campground Listings: View details and images of various campgrounds.
+- User Authentication: Sign up and login to access additional features.
+- Review & Rating System: Leave reviews and rate campgrounds based on your experiences.
+- Search Functionality: Filter and search campgrounds by location, amenities, or user ratings.
+- Responsive Design: Fully functional across devices (mobile, tablet, and desktop).
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript, Bootstrap
-- **Backend**: Node.js, Express
-- **Database**: MongoDB
-- **Authentication**: Passport.js for user authentication
-- **Deployment**: Deployed on [Render](https://epiccampgrounds.onrender.com/)
+- Frontend: HTML, CSS, JavaScript, Bootstrap
+- Backend: Node.js, Express
+- Database: MongoDB
+- Authentication: Passport.js for user authentication
+- Deployment: Deployed on [Render](https://epiccampgrounds.onrender.com/)
 
 ## Getting Started
 
@@ -68,11 +68,11 @@ You can view the live version of the project at:
 
 ## API Documentation
 
-- **GET** `/campgrounds`: Get a list of all campgrounds
-- **POST** `/campgrounds`: Create a new campground (requires authentication)
-- **GET** `/campgrounds/:id`: Get a single campground by ID
-- **PUT** `/campgrounds/:id`: Update a campground (requires authentication)
-- **DELETE** `/campgrounds/:id`: Delete a campground (requires authentication)
+- GET `/campgrounds`: Get a list of all campgrounds
+- POST `/campgrounds`: Create a new campground (requires authentication)
+- GET `/campgrounds/:id`: Get a single campground by ID
+- PUT `/campgrounds/:id`: Update a campground (requires authentication)
+- DELETE `/campgrounds/:id`: Delete a campground (requires authentication)
 
 ## Contributing
 
@@ -83,10 +83,6 @@ If you'd like to contribute to the project, follow these steps:
 3. Commit your changes (`git commit -m 'Add new feature'`)
 4. Push to the branch (`git push origin feature-branch`)
 5. Open a pull request
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Acknowledgements
 
