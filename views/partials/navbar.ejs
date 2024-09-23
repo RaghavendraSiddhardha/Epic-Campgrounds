@@ -23,6 +23,11 @@
             <a class="nav-link" href="/login">Login</a>
             <a class="nav-link" href="/register">Register</a>
           <% } else { %>
+            <form action="/campgrounds/search" class="mt-2" method="post">
+              <label for="search" style="color: white;">Search</label>
+              <input type="text" id="search" name="search">
+              <button type="submit" class="ml-0">Q</button>
+            </form>
             <a class="nav-link" href="/logout">LogOut</a>
           <% } %>
         </div>

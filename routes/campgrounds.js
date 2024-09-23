@@ -14,6 +14,13 @@ router.route('/')
     .get(catchAsync(campgrounds.index))
     .post(isLoggedIn,upload.array('image'),validateCampground,catchAsync(campgrounds.createCampground))
 
+router.post('/search',isLoggedIn,async (req,res)=>{
+    const f = req.body.search; 
+    const regex = new RegExp(`^${f}`, 'i'); 
+    const campgrounds = await Campground.find({ "title": { $regex: regex } });
+    console.log(campgrounds)
+    res.render('campgrounds/search',{campgrounds,f})
+})
 
 router.get('/new',isLoggedIn,campgrounds.renderNewForm)
 
