@@ -45,7 +45,11 @@
                 </form>
                 </div>
             <% } %>
-            <div class="card-footer textmuted"><%= Math.floor(Math.random()*10)+1 %> Days Ago</div>
+            <% if(!campground.date){ %>
+                <div class="card-footer textmuted">Posted on 22 Sep 2024</div>
+            <% }else{ %>
+            <div class="card-footer textmuted">Posted on <%= campground.date %></div>
+            <% } %>
         </div>
     </div>
     <div class="col-6">

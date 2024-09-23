@@ -39,7 +39,8 @@ const CampgroundSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: "Review"
         }
-    ]
+    ],
+    date: String
 },opts)
 
 CampgroundSchema.virtual('properties.popUpMarkup').get(function(){

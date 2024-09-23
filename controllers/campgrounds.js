@@ -20,6 +20,10 @@ module.exports.createCampground = async (req,res,next)=>{
     campground.geometry = geoData.features[0].geometry;
     campground.images = req.files.map(f=>({url: f.path,filename: f.filename}))
     campground.author = req.user._id
+    const date = new Date();
+    const dateString = date.toString();  
+    const slicedDateString = dateString.slice(0, 15);  
+    campground.date = slicedDateString
     await campground.save()
     req.flash('success','Successfully made Campground')
     res.redirect(`/campgrounds/${campground._id}`)
