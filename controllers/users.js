@@ -11,7 +11,7 @@ module.exports.submitReview = async (req,res)=>{
         const registeredUser = await User.register(user,password)
         req.login(registeredUser,err=>{
             if(err) return next(err)
-            req.flash('success','Welcome to EpicCampgrounds')
+            req.flash('success',`Welcome to EpicCampgrounds ${req.user.username}`)
             res.redirect('/campgrounds')
         })
     }catch(e){
@@ -21,7 +21,7 @@ module.exports.submitReview = async (req,res)=>{
 }
 
 module.exports.addLogin = (req, res) => {
-    req.flash('success', 'Welcome back!');
+    req.flash('success', `Welcome back! ${req.user.username}`);
     res.redirect('/campgrounds');
 }
 
@@ -30,11 +30,12 @@ module.exports.renderLogin = async (req,res)=>{
 }
 
 module.exports.renderLogout = (req, res, next) => {
+    const username = req.user.username
     req.logout(function (err) {
         if (err) {
             return next(err);
         }
-        req.flash('success', 'Goodbye!');
+        req.flash('success', `Goodbye ${username}!`);
         res.redirect('/campgrounds');
     });
 }
