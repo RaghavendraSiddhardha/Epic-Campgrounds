@@ -1,6 +1,4 @@
-Great! Here's the updated `README.md` with the deployment link:
 
-```markdown
 # Epic Campgrounds
 
 Epic Campgrounds is a web-based application that allows users to explore, review, and book campgrounds. The platform provides a comprehensive campground listing, user reviews, and ratings, making it easy for outdoor enthusiasts to plan their next adventure.
